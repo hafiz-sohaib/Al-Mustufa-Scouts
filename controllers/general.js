@@ -5,22 +5,22 @@ const nodemailer = require('nodemailer');
 
 // ========== Home ==========
 exports.home = (request, response, next)=> {
-    response.render('home', { title: 'Al-Mustufa Scout', session: request.session.user });
+    response.render('home', { title: 'Al-Mustufa Scout', session: request.session.user, active: 'home' });
 }
 
 // ========== About ==========
 exports.about = (request, response, next)=> {
-    response.render('about', { title: 'About | Al-Mustufa Scout', session: request.session.user });
+    response.render('about', { title: 'About | Al-Mustufa Scout', session: request.session.user, active: 'about' });
 }
 
 // ========== Services ==========
 exports.services = (request, response, next)=> {
-    response.render('services', { title: 'Services | Al-Mustufa Scout', session: request.session.user });
+    response.render('services', { title: 'Services | Al-Mustufa Scout', session: request.session.user, active: 'services' });
 }
 
 // ========== Contact ==========
 exports.contact = (request, response, next)=> {
-    response.render('contact', { title: 'Contact | Al-Mustufa Scout', session: request.session.user });
+    response.render('contact', { title: 'Contact | Al-Mustufa Scout', session: request.session.user, active: 'contact' });
 }
 
 // ========== Join-Us ==========
