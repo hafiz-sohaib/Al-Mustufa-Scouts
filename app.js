@@ -43,7 +43,9 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  
+  if (res.status(404)) return res.render('error', {statusCode: 404, message: "Not Found"})
+  if (res.status(500)) return res.render('error', {statusCode: 500, message: "Internel Server Error"})
 });
 
 module.exports = app;

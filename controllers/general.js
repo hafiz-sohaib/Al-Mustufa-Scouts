@@ -25,13 +25,13 @@ exports.contact = (request, response, next)=> {
 
 // ========== Join-Us ==========
 exports.join_us = (request, response, next)=> {
-    response.render('join-us', {title: 'Join Us | Al-Mustufa Scout', session: request.session.user });
+    response.render('join-us', {title: 'Join Us | Al-Mustufa Scout', session: request.session.user, active: 'join-us' });
 }
 
 // ========== SignUp ==========
 exports.sign_up = (request, response, next)=> {
     if (request.session.user && request.session.user!="") return response.redirect('/');
-    response.render('auth/signup', {title: 'SignUp | Al-Mustufa Scout'});
+    response.render('auth/signup', {title: 'SignUp | Al-Mustufa Scout', active: 'sign-up'});
 }
 
 
