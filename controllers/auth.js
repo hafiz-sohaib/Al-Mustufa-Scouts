@@ -104,7 +104,7 @@ exports.sign_up = (request, response)=> {
         }    
 
         users.create(data).then((results)=> {
-            request.session.user = results._id
+	    request.session.user = {id: result._id, name: result.first_name}
             response.redirect('/')
         }).catch(error=> {
             console.log(error);
